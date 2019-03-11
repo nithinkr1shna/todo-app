@@ -12,10 +12,14 @@ class Todo extends React.Component {
 	super(props);
 	this.state = {
 	    todotext: '',
-	    todos : []
+	    todos : [],
+	    allTodos :[]
 	}
 	this.newTodo = this.newTodo.bind(this);
-    }
+	this.activeButtonClick = this.activeButtonClick.bind(this);
+	this.allButtonClick = this.allButtonClick.bind(this);
+	this.onTodosChanged = this.onTodosChanged.bind(this);
+ }
 
     componentDidMount(){
 	fetch('api/v1/todos')
@@ -26,11 +30,36 @@ class Todo extends React.Component {
 	    .then((todos) =>{
 		console.log(todos)
 		this.setState({
-		    todos: todos
+		    todos: todos,
+		    allTodos : todos
 		})
 		console.log(this.state.todos)
 	    })
     }
+
+    onTodosChanged(todos){
+	this.setState({
+	    todos:todos,
+	    allTodos: todos
+	})
+    }
+    
+    activeButtonClick(){
+	var todos = this.state.allTodos;
+	this.setState({
+	    todos: todos.filter((todo) => todo.done == false)
+	})
+	console.log(this.state.todos)
+	
+    }
+
+    
+    allButtonClick(){
+	this.setState({
+	    todos: this.state.allTodos
+	})
+    }
+    
     
     newTodo(todo){
 	fetch('api/v1/todos', {
@@ -44,7 +73,8 @@ class Todo extends React.Component {
 		var todos = this.state.todos
 		todos.push(data)
 		this.setState({
-		    todos: todos
+		    todos: todos,
+		    allTodos: todos
 		})
 	    })
 	
@@ -54,8 +84,10 @@ class Todo extends React.Component {
 	return (
 		<div>
 		<Header onNewTodo={this.newTodo}/>
-		<Main todos ={this.state.todos}/>
-		<Footer />
+		<Main todos ={this.state.todos} onTodosChanged ={this.onTodosChanged} />
+		<Footer onAllButtonClick = {this.allButtonClick}
+	    onActiveButtonClick = {this.activeButtonClick}
+	    onCompletedButtonClick = {this.completedButtonClick}/>
 		</div>
 	);
     }

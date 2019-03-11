@@ -22,18 +22,20 @@ export default class Main extends Component {
     
     removeDestroyedTodo(destroyedTodo){
 	console.log("clicked")
+	var todos = this.state.todos.filter(function(todo){
+	    return todo != destroyedTodo
+	})
 	this.setState({
-	    todos: this.state.todos.filter(function(todo){
-		return todo !== destroyedTodo
-	    })
-	});
+	    todos: todos
+	})
+	this.props.onTodosChanged(todos);
     }
 
    	render(){
 		return( 
 		    this.state.todos.length > 0 ? this.state.todos.map((todo)=>{
 			return (
-				<TodoItem todo = {todo} onRemoveDestroyedTodo = {this.removeDestroyedTodo}/>
+				<TodoItem todo = {todo} onRemoveDestroyedTodo = {this.removeDestroyedTodo} />
 			
 			);
 			}): <div></div>

@@ -11,9 +11,9 @@ export default class Footer extends Component {
 	return(
 		<div>
 		<ul className="side-by-side">
-		<li><button> All</button></li>
-		<li><button> Active </button></li>
-		<li><button> Completed</button></li>
+		<li><button onClick= {this.props.onAllButtonClick}> All</button></li>
+		<li><button onClick ={this.props.onActiveButtonClick}> Active </button></li>
+		
 		</ul>
 		</div>
 	);

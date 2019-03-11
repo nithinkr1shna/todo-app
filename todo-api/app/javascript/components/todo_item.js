@@ -5,11 +5,17 @@ export default class TodoItem extends Component {
     constructor(props){
 	super(props);
 	this.state = {
-	    isChecked : this.props.todo.done,
+	    isChecked : props.todo.done,
 	    isdestroyed : false
 	}
 	this.handleChange = this.handleChange.bind(this);
 	this.onDestroy = this.onDestroy.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps){
+	this.setState({
+	    isChecked : this.props.todo.done
+	})
     }
 
     handleChange(event){
@@ -25,6 +31,7 @@ export default class TodoItem extends Component {
 	this.setState({
 	    isChecked: !this.props.todo.done
 	})
+	
 	    })
     }
 
