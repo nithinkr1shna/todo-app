@@ -1,15 +1,123 @@
 .new-todo {
-    padding: 16px 16px 16px 60px;
+    padding: 16px 16px 16px 16px;
     border: none;
-    background: rgba(0,0,0,003);
+    background: rgba(0, 0, 0, 0.003);
     box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+    width: 100%;
+
+    edit {
+	font-size: 24px;
+    }
+}
+
+.todo-container{
+
+    background: #fff;
+    margin: 90px 0 40px 0;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 
 .side-by-side {
   width: 100%;
-  border: 1px solid black;
 
 }
+
 .side-by-side li {
-  display: inline;
+    display: inline;
+    padding: 16px 16px 16px 16px;
+}
+
+li {
+    list-style-type : none;
+    line-height: 1.4em;
+}
+
+li div {
+    padding: 16px 16px 16px 16px;
+}
+
+div {
+    display: block;
+}
+
+.todo-list li div {
+    span {
+	display:inline;
+    }
+    button {
+	display: inline;
+    }
+
+    label {
+	word-break: break-all;
+	padding: 15px 15px 15px 60px;
+	display: block;
+	line-height: 1.2;
+	transition: color 0.4s;
+	
+	
+    }
+}
+.td-item{
+    font-weight: 100;
+}
+
+.row {
+    margin-left: 250px;
+}
+
+.todo-list li{
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+    
+     .destroy {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	bottom: 0;
+	width: 40px;
+	height: 40px;
+	margin: auto 0;
+	font-size: 30px;
+	color: #cc9a9a;
+	margin-bottom: 11px;
+	transition: color 0.2s ease-out;
+    }
+}
+
+
+
+
+.filters{
+
+    padding: 30px;
+    li {
+	color: inherit;
+	margin: 3px;
+	padding: 3px 7px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 3px;
+    }
+}
+
+.filters li:hover {
+    border-color: rgba(175, 47, 47, 0.1);
+}
+
+
+.custom-glyphicon{
+    font-size: 15px;
+    padding-right: 10px;
+    padding-left: 7px;
 }

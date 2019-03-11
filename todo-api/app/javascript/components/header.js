@@ -30,7 +30,9 @@ export default class Header extends Component {
 
     render(){
 	return(
-	    <input className="new-todo"value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange}/>
+	    <div className= "input">
+		<input className="new-todo" value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange} placeholder="What needs to be done!"/>
+		</div>
 	);
     }
 }

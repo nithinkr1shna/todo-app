@@ -10,8 +10,9 @@ export default class Footer extends Component {
     render(){
 	return(
 		<div>
-		<ul className="side-by-side">
-		<li><button onClick= {this.props.onAllButtonClick}> All</button></li>
+		<ul className="side-by-side filters">
+		<li><button className = "custom-button"
+	    onClick= {this.props.onAllButtonClick}> All</button></li>
 		<li><button onClick ={this.props.onActiveButtonClick}> Active </button></li>
 		
 		</ul>

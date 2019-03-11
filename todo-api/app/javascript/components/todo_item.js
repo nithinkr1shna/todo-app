@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 export default class TodoItem extends Component {
 
     constructor(props){
@@ -52,6 +53,7 @@ export default class TodoItem extends Component {
 	var todo = this.props.todo;
 	console.log(this.props.todo.done)
 	return(
+	    <div className = "todo-list">
 		<li key ={todo.created_at}>  
 		<div>
 		<input type="checkbox"
@@ -59,13 +61,14 @@ export default class TodoItem extends Component {
 	    defaultChecked = {this.state.isChecked}
 	    onChange = {this.handleChange}
 		/>
-		<button className = "icon">Set Important </button>
+	 <span className="glyphicon glyphicon glyphicon-arrow-up custom-glyphicon"></span>
 		<label className ="td-item">{todo.title}</label>
 		<button className="destroy"
 	    onClick = {this.onDestroy}
 		></button>
 		</div>	
-		</li>				
+		</li>
+		</div>
 	);
     }
 }
