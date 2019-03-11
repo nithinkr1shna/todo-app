@@ -115,9 +115,22 @@ div {
     border-color: rgba(175, 47, 47, 0.1);
 }
 
+button {
+    border: 1px solid rgb(204, 198, 198);;
+    Background-color: transparent;
+    border-radius: 3px;
+}
+button:hover {
+    border-color: rgba(175, 47, 47, 0.1);
+}
 
 .custom-glyphicon{
     font-size: 15px;
     padding-right: 10px;
     padding-left: 7px;
 }
+
+ .selected {
+	color: rgba(255, 0, 0, 0.25)
+ }
+

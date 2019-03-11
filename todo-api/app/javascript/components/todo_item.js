@@ -61,11 +61,13 @@ export default class TodoItem extends Component {
 	    defaultChecked = {this.state.isChecked}
 	    onChange = {this.handleChange}
 		/>
-	 <span className="glyphicon glyphicon glyphicon-arrow-up custom-glyphicon"></span>
+	 <span className="glyphicon glyphicon-circle-arrow-up custom-glyphicon"></span>
 		<label className ="td-item">{todo.title}</label>
-		<button className="destroy"
-	    onClick = {this.onDestroy}
-		></button>
+		<button type="button" class="close" aria-label="Close" onClick = {this.onDestroy}>
+		<span aria-hidden="true">&times;</span>
+
+	    
+		</button>
 		</div>	
 		</li>
 		</div>
