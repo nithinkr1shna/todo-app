@@ -1,8 +1,9 @@
-class TodosController < ApplicationController
+class TodosController < ActionController::API
   def index
     todos = Todo.order("created_at DESC")
     render json: todos
   end
+
 
   def create
     todo = Todo.create(allowed_params)
@@ -25,6 +26,7 @@ class TodosController < ApplicationController
   private
 
   def allowed_params
+    puts params.inspect
     params.require(:todo).permit(:title, :done, :important)
   end
 end

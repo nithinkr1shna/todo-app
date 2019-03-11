@@ -9,6 +9,8 @@ RSpec.describe TodosController, type: :controller do
     end
   end
 
+  # remove expect wrapping the posts requests
+
   describe "Create Todo", :type => :request do
     context "with valid parameters" do
       let(:valid_params) do
@@ -46,7 +48,7 @@ RSpec.describe TodosController, type: :controller do
       end
     end
     
-  end
+    end
 
   describe "destroy todo" do
     context "with valid paramaters" do
@@ -59,7 +61,7 @@ RSpec.describe TodosController, type: :controller do
       end
 
       it "destroys todo" do
-         expect {post '/api/v1/todos', params: valid_params}
+         expect {post '/api/v1/todos', params: valid_params }
          expect(response).to have_http_status(:success)
 
          expect { delete '/api/v1/#{response.id}}'}
