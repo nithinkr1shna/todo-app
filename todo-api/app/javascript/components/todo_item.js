@@ -9,6 +9,7 @@ export default class TodoItem extends Component {
 	    isdestroyed : false
 	}
 	this.handleChange = this.handleChange.bind(this);
+	this.onDestroy = this.onDestroy.bind(this);
     }
 
     handleChange(event){
@@ -27,6 +28,19 @@ export default class TodoItem extends Component {
 	    })
     }
 
+    onDestroy(event){
+	fetch(`api/v1/todos/${this.props.todo.id}`, {
+	    method: 'DELETE',
+	    headers: {
+			"Content-Type": "application/json"
+	    }
+	}).then((res)=> res.json())
+	    .then((data) => {
+		console.log(data)
+	    })
+	this.props.onRemoveDestroyedTodo(this.props.todo);
+    }
+
     render(){
 	var todo = this.props.todo;
 	console.log(this.props.todo.done)
@@ -38,9 +52,11 @@ export default class TodoItem extends Component {
 	    defaultChecked = {this.state.isChecked}
 	    onChange = {this.handleChange}
 		/>
-		<span className = "icon">icon </span>
+		<button className = "icon">Set Important </button>
 		<label className ="td-item">{todo.title}</label>
-		<button className ="destroy"></button>
+		<button className="destroy"
+	    onClick = {this.onDestroy}
+		></button>
 		</div>	
 		</li>				
 	);
