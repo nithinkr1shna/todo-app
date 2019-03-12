@@ -37,6 +37,8 @@ export default class TodoItem extends Component {
 	})
 	
 	    })
+	    .catch(error => console.error(error));
+	
 	console.log(this.state.isImportant);
 	
 	var todo = this.props.todo;
@@ -59,6 +61,7 @@ export default class TodoItem extends Component {
 	})
 	
 	    })
+	    .catch(error => console.error(error));
 
 	var todo = this.props.todo;
 	todo.done = this.state.isChecked;
@@ -77,6 +80,8 @@ export default class TodoItem extends Component {
 	    .then((data) => {
 		console.log(data)
 	    })
+	    .catch(error => console.error(error));
+	
 	this.props.onRemoveDestroyedTodo(this.props.todo);
     }
 

@@ -21,9 +21,14 @@ class Todo extends React.Component {
 	this.allButtonClick = this.allButtonClick.bind(this);
 	this.onTodosChanged = this.onTodosChanged.bind(this);
 	this.onCompletionOrImportanceChange = this.onCompletionOrImportanceChange.bind(this);
+	this.getAllTodos = this.getAllTodos.bind(this);
  }
 
     componentDidMount(){
+	this.getAllTodos();
+    }
+
+    getAllTodos(){
 	fetch('api/v1/todos')
 	    .then(function(response){
 		console.log(response);
@@ -37,6 +42,7 @@ class Todo extends React.Component {
 		})
 		console.log(this.state.todos)
 	    })
+	    .catch(error => console.error(error));
     }
 
     onTodosChanged(todos){
@@ -86,7 +92,8 @@ class Todo extends React.Component {
 		    allTodos: todos
 		})
 	    })
-	
+	    .catch(error => console.error(error));
+	this.getAllTodos();
     }
     
     render () {

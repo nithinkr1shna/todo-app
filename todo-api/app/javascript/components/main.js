@@ -63,7 +63,7 @@ export default class Main extends Component {
 
    	render(){
 		return( 
-		    this.state.todos.length > 0 ? this.state.todos.map((todo)=>{
+		    this.props.todos.length > 0 ? this.props.todos.map((todo)=>{
 			return (
 				<TodoItem todo = {todo}
 			    onRemoveDestroyedTodo = {this.removeDestroyedTodo}
