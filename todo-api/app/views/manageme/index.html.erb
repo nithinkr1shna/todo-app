@@ -1,0 +1,23 @@
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-9">
+      <div class = "content">
+	<div class = "col-md-8 day">
+	  <%= Time.now.strftime("%A") %>
+	</div>
+	<div class = "col-md-4 date">
+	  <%= Time.now.day%>
+	  </div>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-9 todo-container">
+      <div class = "content">
+	<%= react_component("Todo") %>
+      </div>
+    </div>
+  </div>
+  
+</div>

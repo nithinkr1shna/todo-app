@@ -1,0 +1,179 @@
+.new-todo {
+    padding: 16px 16px 16px 16px;
+    border: none;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+    width: 100%;
+
+    edit {
+	font-size: 24px;
+    }
+}
+
+.todo-container{
+
+    background: #fff;
+    margin: 10px 0 10px 0;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+input[type="checkbox"]:focus{
+        outline:0;
+}
+
+.side-by-side {
+  width: 100%;
+
+}
+
+.side-by-side li {
+    display: inline;
+    padding: 16px 16px 16px 16px;
+}
+
+li {
+    list-style-type : none;
+    line-height: 1.4em;
+}
+
+li div {
+    padding: 16px 16px 16px 16px;
+}
+
+div {
+    display: block;
+}
+
+.todo-list li div {
+    span {
+	display:inline;
+    }
+    button {
+	display: inline;
+    }
+
+    label {
+	word-break: break-all;
+	padding: 15px 15px 15px 60px;
+	display: block;
+	line-height: 1.2;
+	transition: color 0.4s;
+	
+	
+    }
+}
+.td-item{
+    font-weight: 100;
+}
+
+.row {
+    margin-left: 250px;
+}
+
+.todo-list li{
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+    
+     .destroy {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	bottom: 0;
+	width: 40px;
+	height: 40px;
+	margin: auto 0;
+	font-size: 30px;
+	color: #cc9a9a;
+	margin-bottom: 11px;
+	transition: color 0.2s ease-out;
+    }
+}
+
+
+
+
+.filters{
+
+    padding: 30px;
+    li {
+	color: inherit;
+	margin: 3px;
+	padding: 3px 7px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 3px;
+    }
+}
+
+.filters li:hover {
+    border-color: rgba(175, 47, 47, 0.1);
+}
+
+button {
+    border: 1px solid rgb(204, 198, 198);;
+    Background-color: transparent;
+    border-radius: 3px;
+}
+button:hover {
+    border-color: rgba(175, 47, 47, 0.1);
+}
+
+.custom-glyphicon{
+    font-size: 15px;
+    padding-right: 10px;
+    padding-left: 7px;
+    color: lightgrey;
+}
+
+ .selected {
+	color: rgba(255, 0, 0, 0.25)
+ }
+
+ .day {
+     font-size : 50px;
+     padding-top: 20px;
+     paddinf-left: 0px;
+ }
+
+ .date {
+     font-size: 100px;
+     color: rgb(197, 197, 197);
+ }
+
+
+ .top {
+     padding-top:30px;
+ }
+
+ .checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+ }
+
+ .checkbox-round:checked {
+    background-color: #3eda2c;
+}
+
+
+ .completed {
+     color: #d9d9d9;
+    text-decoration: line-through;
+ }
