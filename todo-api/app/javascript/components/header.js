@@ -12,6 +12,10 @@ export default class Header extends Component {
 	this.keyPress = this.keyPress.bind(this);
     }
 
+    componentDidMount(){
+	this.textInput.focus();
+    }
+
     handleChange(event){
 	this.setState({
 	    value : event.target.value
@@ -31,7 +35,9 @@ export default class Header extends Component {
     render(){
 	return(
 	    <div className= "input">
-		<input className="new-todo" value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange} placeholder="What needs to be done!"/>
+		<input className="new-todo enable-border"
+	    ref={(input) => { this.textInput = input; }}
+	    value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange} placeholder="What needs to be done!"/>
 		</div>
 	);
     }
