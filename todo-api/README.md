@@ -19,6 +19,7 @@ follow the steps,
 - cd to the root directory 
 And type in the commands
     
+    - bundle install
     - rails db:migrate
     - To seed the application , rails db:seed
     - rails s (this wil start the server)
