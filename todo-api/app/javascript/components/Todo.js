@@ -20,6 +20,7 @@ class Todo extends React.Component {
 	this.activeButtonClick = this.activeButtonClick.bind(this);
 	this.allButtonClick = this.allButtonClick.bind(this);
 	this.onTodosChanged = this.onTodosChanged.bind(this);
+	this.onCompletionOrImportanceChange = this.onCompletionOrImportanceChange.bind(this);
  }
 
     componentDidMount(){
@@ -42,6 +43,13 @@ class Todo extends React.Component {
 	this.setState({
 	    todos:todos,
 	    allTodos: todos
+	})
+    }
+
+    onCompletionOrImportanceChange(changedTodos){
+	this.setState({
+	    todos: changedTodos,
+	    allTodos: changedTodos
 	})
     }
     
@@ -85,7 +93,10 @@ class Todo extends React.Component {
 	return (
 		<div>
 		<Header onNewTodo={this.newTodo}/>
-		<Main todos ={this.state.todos} onTodosChanged ={this.onTodosChanged} />
+		<Main todos ={this.state.todos}
+	    onTodosChanged ={this.onTodosChanged}
+	    onCompletionOrImportanceChange = {this.onCompletionOrImportanceChange}
+		/>
 		<Footer onAllButtonClick = {this.allButtonClick}
 	    onActiveButtonClick = {this.activeButtonClick}
 	    onCompletedButtonClick = {this.completedButtonClick}/>

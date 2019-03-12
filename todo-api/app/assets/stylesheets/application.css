@@ -13,7 +13,7 @@
 .todo-container{
 
     background: #fff;
-    margin: 90px 0 40px 0;
+    margin: 10px 0 10px 0;
     position: relative;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
@@ -23,6 +23,11 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+}
+
+
+input[type="checkbox"]:focus{
+        outline:0;
 }
 
 .side-by-side {
@@ -128,9 +133,47 @@ button:hover {
     font-size: 15px;
     padding-right: 10px;
     padding-left: 7px;
+    color: lightgrey;
 }
 
  .selected {
 	color: rgba(255, 0, 0, 0.25)
  }
 
+ .day {
+     font-size : 50px;
+     padding-top: 20px;
+     paddinf-left: 0px;
+ }
+
+ .date {
+     font-size: 100px;
+     color: rgb(197, 197, 197);
+ }
+
+
+ .top {
+     padding-top:30px;
+ }
+
+ .checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+ }
+
+ .checkbox-round:checked {
+    background-color: #3eda2c;
+}
+
+
+ .completed {
+     color: #d9d9d9;
+    text-decoration: line-through;
+ }

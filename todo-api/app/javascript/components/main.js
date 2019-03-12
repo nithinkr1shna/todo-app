@@ -11,12 +11,42 @@ export default class Main extends Component {
 	}
 
 	this.removeDestroyedTodo = this.removeDestroyedTodo.bind(this);
+	this.onCompletionStatusChanged =this.onCompletionStatusChanged.bind(this);
+	this.onImportanceChanged = this.onImportanceChanged.bind(this);
     }
 
     componentWillReceiveProps(nextProps){
 	this.setState({
 	    todos: nextProps.todos
 	})
+    }
+
+    onCompletionStatusChanged(changedTodo){
+	var todos = this.props.todos;
+	todos.forEach(function(todo){
+	    if(todo.id == changedTodo.id){
+		todo.done = !changedTodo.done;
+	    }
+	})
+	this.setState({
+	    todos: todos
+	})
+
+	
+    }
+
+    onImportanceChanged(changedTodo){
+	var todos = this.props.todos;
+	todos.forEach(function(todo){
+	    if(todo.id == changedTodo.id){
+		todo.important = !changedTodo.important;
+	    }
+	})
+	this.setState({
+	    todos: todos
+	})
+
+
     }
    
     
@@ -35,7 +65,10 @@ export default class Main extends Component {
 		return( 
 		    this.state.todos.length > 0 ? this.state.todos.map((todo)=>{
 			return (
-				<TodoItem todo = {todo} onRemoveDestroyedTodo = {this.removeDestroyedTodo} />
+				<TodoItem todo = {todo}
+			    onRemoveDestroyedTodo = {this.removeDestroyedTodo}
+			    onCompletionStatusChanged ={this.onCompletionStatusChanged}
+			    onImportanceChanged = {this.onImportanceChanged} />
 			
 			);
 			}): <div></div>
