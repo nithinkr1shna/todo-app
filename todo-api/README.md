@@ -19,6 +19,8 @@ follow the steps,
 - cd to the root directory 
 And type in the commands
     
+    - rails db:migrate
+    - To seed the application , rails db:seed
     - rails s (this wil start the server)
     - visit localhost:3000 to view the Todo app
 
